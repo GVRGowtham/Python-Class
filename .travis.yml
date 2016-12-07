@@ -5,5 +5,4 @@ cache: pip
 script:
   - cd task\ 1/
   - python test1.py
-  - python test2.py
-  - 1
+  - echo 5 | python test2.py
