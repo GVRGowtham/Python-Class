@@ -3,7 +3,7 @@ python:
   - "2.7"
 cache: pip
 script:
-  - cd task 1/
+  - cd task\ 1/
   - python test1.py
   - python test2.py
   - 1
