@@ -2,8 +2,6 @@ language: python
 python:
   - "2.7"
 cache: pip
-install:
-  - pip install -r requirements.txt
 script:
   - cd task 1/
   - python test1.py
