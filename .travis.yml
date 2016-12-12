@@ -3,4 +3,9 @@ python:
   - "2.7"
 cache: pip
 script:
-  - python test.py
+
+=======
+  - cd task\ 1/
+  - python test1.py
+  - echo 5 | python test2.py
+
