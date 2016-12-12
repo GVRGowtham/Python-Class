@@ -18,7 +18,7 @@
 
         <!-- Icon -->
         <link rel="shortcut icon" href="assets/ico/python.png">
-
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     </head>
 	
 	<!-- CSS Edit -->
@@ -44,7 +44,7 @@
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="#">Home</a></li>
+				<li><a href="#">Home</a></li>
 				<li class="dropdown">
 					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Session minutes
 					<span class="caret"></span></a>
@@ -54,11 +54,11 @@
 						<li><a href="#">Session 3</a></li>
 					</ul>
 				</li>
-				<li class="dropdown">
+				<li class="dropdown" class="active">
 					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Tasks
 					<span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li><a href="task_1.html">Task 1</a></li>
+						<li class="active"><a href="#">Task 1</a></li>
 						<li><a href="#">Task 2</a></li>
 						<li><a href="#">Task 3</a></li>
 					</ul>
@@ -119,4 +119,33 @@
 		
 		
     </body>
+	<script>
+		/*$(document).ready(function(){
+			var jqXHR = $.ajax({
+				type: "POST",
+				url: "/task_1_dir.py",
+				async: false,
+				data: {}
+			}).done(function (){
+			response= jqXHR.responseText;
+			alert(response);
+			});
+		*/
+	$(document).ready(function(){
+		$.ajax({
+			type: "GET",
+			url: "https://raw.githubusercontent.com/GVRGowtham/Python-Class/ne/fun.txt",
+			success: function(data)
+			{
+				alert(data);
+				var lst=data.split('\n');
+			}
+			error: function()
+			{
+				alert("Failed");
+			}
+		});
+		
+	});
+	</script>
 </html>
