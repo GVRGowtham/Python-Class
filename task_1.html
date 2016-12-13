@@ -23,6 +23,12 @@
 	
 	<!-- CSS Edit -->
 	<style>
+	.col-xs-4:hover {
+		text-decoration: underline;
+	}
+	h3{
+		color:white;
+	}
 	.form-bottom{
 		color:white;
 		font-weight:normal;
@@ -85,26 +91,8 @@
 		
 		<!-- Intro text -->
 		<div class="container">
-			<div class="row">
-				<div class="col-xs-10 col-xs-offset-1">
-                   			<div class="form-top">
-                   				<div class="form-top-left">
-                  					<h3><strong>About the course</strong></h3>
-                   				</div>
-                   			</div>
-                    			<div class="form-bottom">
-                  				<p>Wikipedia says "Python is a widely used high-level, general-purpose, interpreted, dynamic programming language. Its design philosophy emphasizes code readability, and its syntax allows programmers to express concepts in fewer lines of code than possible in languages such as C++ or Java. The language provides constructs intended to enable writing clear programs on both a small and large scale."</p>
-						<p>That being said, Python is much more powerful that you can expect. Python is a multi-purpose programming language that excels in the fields of Web backend development, Internet of Things, Application Development, Artificial Intelligence and Machine Learning, Automation and much more.</p>
-						<p>This December, we are bringing you a chance to participate in a two-week long online python sprint which basically aims at improvising your coding and developing skills.</p>
-						<p>If you are interested in coding and want to learn more about python and contribute towards Open Source, this is your chance.</p>
-						<p>At the end of the event, you will be getting a cool profile to show case your python skills in the form of scripts.</p>
-						<p>Join us to learn more about Python</p>
-						<p>Let's get our hands dirty with code :) </p>
-						<p>Visit <a href="https://github.com/GVRGowtham/Python-Class/" target="new">here</a> for more details on the schedule</p>
-						<p>Register <a href="https://goo.gl/forms/iEVK5Ans6jU7dtZu1" target="new">here</a></p>
-					</div>
-					</div>
-            		</div>
+			<div class="row" id="put">
+			</div>
 		</div>
 		<br/><br/><br/><br/><br/><br/>
 
@@ -120,26 +108,23 @@
 		
     </body>
 	<script>
-		/*$(document).ready(function(){
-			var jqXHR = $.ajax({
-				type: "POST",
-				url: "/task_1_dir.py",
-				async: false,
-				data: {}
-			}).done(function (){
-			response= jqXHR.responseText;
-			alert(response);
-			});
-		*/
 	$(document).ready(function(){
 		$.ajax({
 			type: "GET",
-			url: "https://raw.githubusercontent.com/GVRGowtham/Python-Class/ne/fun.txt",
+			url: "https://raw.githubusercontent.com/GVRGowtham/Python-Class/ne/Tasks/Task 1/Names.txt",
 			success: function(data)
 			{
-				alert(data);
-				var lst=data.split('\n');
-			}
+				var lst=data.split("\n");
+				//alert(lst);
+				var inn="<div class=\"view overlay\"><div class=\"row\">";
+				for (i in lst){
+					var sep=lst[i].split("-");
+					inn=inn+"<div class=\"col-xs-4 \" id=\""+sep[0]+"\" onclick=\"show('"+sep[0]+"')\"><div class=\"form-bottom\">"+"<h3><strong>"+sep[0]+"</strong></h3><p align=\"right\">"+sep[1]+"</p></div></div>";
+				}
+				inn=inn+"</div></div>";
+				//alert(inn);
+				document.getElementById("put").innerHTML=inn;
+			},
 			error: function()
 			{
 				alert("Failed");
@@ -147,5 +132,8 @@
 		});
 		
 	});
+	function show(name){
+		alert(name);
+	}
 	</script>
 </html>
