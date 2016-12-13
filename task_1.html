@@ -128,7 +128,7 @@
 				
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2 text">
-                            <h1><img src="assets/ico/python.png" width="80px" height="80px">Learn <strong> Python</strong></h1><br/>
+                            <h1><img src="assets/ico/python.png" width="80px" height="80px">Learn <strong> Python</strong> - Task 1</h1><br/>
                         </div>
                     </div>
 				</div>
@@ -199,7 +199,6 @@
     }
 	
 	function show(name){
-		modal.style.display = "block";
 		$.ajax({
 			type: "GET",
 			url: "https://raw.githubusercontent.com/GVRGowtham/Python-Class/ne/Tasks/Task 1/"+name+"/Problem.txt",
@@ -224,6 +223,7 @@
 				alert("Failed to load solution");
 			}
 		});
+		modal.style.display = "block";
 	}
 	</script>
 </html>
