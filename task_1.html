@@ -209,7 +209,7 @@
 			},
 			error: function()
 			{
-				alert("Failed");
+				alert("Failed to load problem");
 			}
 		});
 		$.ajax({
@@ -217,11 +217,11 @@
 			url: "https://raw.githubusercontent.com/GVRGowtham/Python-Class/ne/Tasks/Task 1/"+name+"/Solution.txt",
 			success: function(data)
 			{
-				document.getElementById("problem").innerHTML=data;
+				document.getElementById("solution").innerHTML=data;
 			},
 			error: function()
 			{
-				alert("Failed");
+				alert("Failed to load solution");
 			}
 		});
 	}
