@@ -10,14 +10,14 @@
 
         <!-- CSS -->
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
-        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css">
-        <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
-		<link rel="stylesheet" href="assets/css/form-elements.css">
-        <link rel="stylesheet" href="assets/css/style.css">
-        <link rel="stylesheet" href="assets/css/animate.css">
+        <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" href="../assets/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="../assets/css/form-elements.css">
+        <link rel="stylesheet" href="../assets/css/style.css">
+        <link rel="stylesheet" href="../assets/css/animate.css">
 
         <!-- Icon -->
-        <link rel="shortcut icon" href="assets/ico/python.png">
+        <link rel="shortcut icon" href="../assets/ico/python.png">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     </head>
 	
@@ -88,12 +88,12 @@
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 			<ul class="nav navbar-nav">
-				<li><a href="index.html">Home</a></li>
+				<li><a href="#">Home</a></li>
 				<li class="dropdown">
 					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Session minutes
 					<span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li><a href="session_intro.html">Intro session</a></li>
+						<li><a href="#">Intro session</a></li>
 					</ul>
 				</li>
 				<li class="dropdown" class="active">
@@ -128,7 +128,7 @@
 				
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2 text">
-                            <h1><img src="assets/ico/python.png" width="80px" height="80px">Learn <strong> Python</strong> - Task 1</h1><br/>
+                            <h1><img src="../assets/ico/python.png" width="80px" height="80px">Learn <strong> Python</strong> - Task 1</h1><br/>
                         </div>
                     </div>
 				</div>
@@ -143,10 +143,10 @@
 		<br/><br/><br/><br/><br/><br/>
 
         <!-- Javascript -->
-        <script src="assets/js/jquery-1.11.1.min.js"></script>
-        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-        <script src="assets/js/jquery.backstretch.min.js"></script>
-        <script src="assets/js/scripts.js"></script>
+        <script src="../assets/js/jquery-1.11.1.min.js"></script>
+        <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="../assets/js/jquery.backstretch.min.js"></script>
+        <script src="../assets/js/scripts.js"></script>
         
 		<!-- Footer -->
 		<footer><strong>**Designed by Gowtham and Prasanth	   &ensp;&ensp;&ensp;	Powered by Bootstrap**<strong></footer>
@@ -199,8 +199,6 @@
     }
 	
 	function show(name){
-		document.getElementById("problem").innerHTML="Loading";
-		document.getElementById("solution").innerHTML="Loading";
 		$.ajax({
 			type: "GET",
 			url: "https://raw.githubusercontent.com/GVRGowtham/Python-Class/ne/Tasks/Task 1/"+name+"/Problem.txt",
