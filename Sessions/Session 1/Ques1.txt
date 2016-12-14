@@ -22,3 +22,39 @@ q=c/4;
 r=c%4;
 printf("%d",q+r);
 }
+
+KANIKA 
+
+int main(){
+int n;
+int s[n];
+int taxi = 0;
+int count = 0;
+cin >> n;
+for(int i=0;i<n;i++){
+	cin>>s[i];
+}
+
+for(int i=0;i<n;i++){
+	if(s[i] > 2){
+		taxi++;
+		}
+	else{
+		if(s[i] == 1){
+			count++;
+			}
+		else if(s[i] == 2 ){
+			count = count + 2;
+			}
+		if(count == 4){
+			taxi++;
+			count=0;
+			}
+		}
+	}
+if(count > 0){
+taxi++;
+}
+cout << taxi;
+return 0;
+}
