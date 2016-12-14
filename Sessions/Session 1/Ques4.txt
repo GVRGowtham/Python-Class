@@ -1,4 +1,4 @@
-4) A country has n cities. Initially, there is no road in the country. One day, the king decides to construct some roads connecting pairs of cities. Roads can be traversed either way. He wants those roads to be constructed in such a way that it is possible to go from each city to any other city by traversing at most two roads. You are also given m pairs of cities — roads cannot be constructed between these pairs of cities.
+4) A country has n cities. Initially, there is no road in the country. One day, the king decides to construct some roads connecting pairs of cities. Roads can be traversed either way. He wants those roads to be constructed in such a way that it is possible to go from each city to any other city by traversing at most two roads. You are also given m pairs of cities â€” roads cannot be constructed between these pairs of cities.
 Your task is to construct the minimum number of roads that still satisfy the above conditions. The constraints will guarantee that this is always possible.
 Input
 The first line consists of two integers n and m.
@@ -17,4 +17,39 @@ Sample : 3
 
 
 
-Solution :
+Solution : AADIT JAIN
+
+#include<cstdio>  
+#include<iostream>  
+#include<cstring>  
+  
+using namespace std;  
+bool flag[1010];  
+  
+int main()  
+{  
+    int n,m,a,b;  
+   while(scanf("%d%d",&n,&m)!=EOF)  
+   {  
+       memset(flag,0,sizeof(flag));  
+       for(int i=1;i<=m;i++)  
+       {  
+           scanf("%d%d",&a,&b);  
+           flag[a]=true;  
+           flag[b]=true;  
+       }  
+       int u;  
+       for(int j=1;j<=n;j++)  
+       {  
+           if(flag[j]==false)  
+               u=j;  
+       }  
+       printf("%d\n",n-1);  
+       for(int k=1;k<=n;k++)  
+       {  
+           if(k!=u)  
+            printf("%d %d\n",k,u);  
+       }  
+   }  
+   return 0;  
+}  

@@ -1,7 +1,7 @@
 2) Caps lock is a computer keyboard key. Pressing it sets an input mode in which typed letters are capital by default. If it is pressed by accident, it leads to accidents like the one we had in the first passage. 
 Let's consider that a word has been typed with the Caps lock key accidentally switched on, if: 
-•	either it only contains uppercase letters; 
-•	or all letters except for the first one are uppercase. 
+â€¢	either it only contains uppercase letters; 
+â€¢	or all letters except for the first one are uppercase. 
 In this case we should automatically change the case of all letters. For example, the case of the letters that form words "hELLO", "HTTP" should be changed.
 Write a program that applies the rule mentioned above. If the rule cannot be applied, the program should leave the word unchanged.
 Input
@@ -13,3 +13,94 @@ Sample: Caps
 
 
 Solution :
+AKSHIT SHARMA
+
+char word[100];
+int i;
+
+void main(){
+	printf("Enter the word: ");
+	scanf("%s", word);
+	
+	if((word[0] >= 'a' && word[0] <= 'z') && (word[1] >= 'A' && word[1] <= 'Z')){
+		printf("%c",word[0]-32);
+		for(i=1;i<=100;i++){
+			printf("%c",word[i]+32);
+		}
+	}
+
+	else{
+		for(i=0;i<=100;i++){
+			printf("%c",word[i]);
+		}		
+	}
+}
+=======
+AKSHAY SAINI
+int main(){
+char word[100];
+scanf("%s", word);
+int i, len=strlen(word);
+
+for(i=1; i<len; i++){
+	if(isLowerCase(word[i])) break;
+} 
+if(i==len){
+	if(isLowerCase(word[0])) word[0]-=32;
+	for(i=1; i<len; i++){
+		if(isUpperCase(word[i])) word[i]+=32;
+	}
+}
+printf("%s\n", word);
+return 0;
+}
+
+int isUpperCase(char c){
+	if(c > 64 && c < 98) return 1;
+	return 0;
+}
+
+int isLowerCase(char c){
+	if(c > 96 && c < 123) return 1;
+	return 0;
+}
+
+SOLUTION : AADIT JAIN
+
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+int chk(char word[]){
+	
+	int i,n=0;
+		for (i=0;i<strlen(word);i++){
+		if(islower(word[i])){
+			n++;
+		}
+	
+	}
+	return n;	
+}
+int main(){
+	char word[100];
+	int i;
+	scanf("%s",&word);
+	if(islower(word[0]) && chk(word)>1){
+		printf("%s",word);
+	}
+	else if(islower(word[0])&& chk(word)==1){
+		printf("%c",toupper(word[0]));
+		for(i=1;i<strlen(word);i++){
+			printf("%c",tolower(word[i]));
+		}
+	}
+	else if(chk(word)==0){
+		for(i=0;i<strlen(word);i++){
+			printf("%c",tolower(word[i]));
+		}
+	}
+	else{
+		printf("%s",word);
+	}
+	return 0;
+
