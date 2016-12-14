@@ -88,12 +88,12 @@
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 			<ul class="nav navbar-nav">
-				<li><a href="#">Home</a></li>
+				<li><a href="index.html">Home</a></li>
 				<li class="dropdown">
 					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Session minutes
 					<span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li><a href="#">Intro session</a></li>
+						<li><a href="session_intro.html">Intro session</a></li>
 					</ul>
 				</li>
 				<li class="dropdown" class="active">
@@ -128,7 +128,7 @@
 				
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2 text">
-                            <h1><img src="assets/ico/python.png" width="80px" height="80px">Learn <strong> Python</strong></h1><br/>
+                            <h1><img src="assets/ico/python.png" width="80px" height="80px">Learn <strong> Python</strong> - Task 1</h1><br/>
                         </div>
                     </div>
 				</div>
@@ -199,7 +199,8 @@
     }
 	
 	function show(name){
-		modal.style.display = "block";
+		document.getElementById("problem").innerHTML="Loading";
+		document.getElementById("solution").innerHTML="Loading";
 		$.ajax({
 			type: "GET",
 			url: "https://raw.githubusercontent.com/GVRGowtham/Python-Class/ne/Tasks/Task 1/"+name+"/Problem.txt",
@@ -209,7 +210,7 @@
 			},
 			error: function()
 			{
-				alert("Failed");
+				alert("Failed to load problem");
 			}
 		});
 		$.ajax({
@@ -217,13 +218,14 @@
 			url: "https://raw.githubusercontent.com/GVRGowtham/Python-Class/ne/Tasks/Task 1/"+name+"/Solution.txt",
 			success: function(data)
 			{
-				document.getElementById("problem").innerHTML=data;
+				document.getElementById("solution").innerHTML=data;
 			},
 			error: function()
 			{
-				alert("Failed");
+				alert("Failed to load solution");
 			}
 		});
+		modal.style.display = "block";
 	}
 	</script>
 </html>
