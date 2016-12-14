@@ -13,3 +13,25 @@ Sample: Caps
 
 
 Solution :
+AKSHIT SHARMA
+
+char word[100];
+int i;
+
+void main(){
+	printf("Enter the word: ");
+	scanf("%s", word);
+	
+	if((word[0] >= 'a' && word[0] <= 'z') && (word[1] >= 'A' && word[1] <= 'Z')){
+		printf("%c",word[0]-32);
+		for(i=1;i<=100;i++){
+			printf("%c",word[i]+32);
+		}
+	}
+
+	else{
+		for(i=0;i<=100;i++){
+			printf("%c",word[i]);
+		}		
+	}
+}
