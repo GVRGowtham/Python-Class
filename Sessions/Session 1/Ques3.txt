@@ -2,7 +2,7 @@
 If Kirito starts duelling with the i-th (1<=i<=n) dragon and Kirito's strength is not greater than the dragon's strength xi, then Kirito loses the duel and dies. But if Kirito's strength is greater than the dragon's strength, then he defeats the dragon and gets a bonus strength increase by yi.
 Kirito can fight the dragons in any order. Determine whether he can move on to the next level of the game, that is, defeat all dragons without a single loss.
 Input
-The first line contains two space-separated integers s and n. Then n lines follow: the i-th line contains space-separated integers xi and yi — the i-th dragon's strength and the bonus for defeating it.
+The first line contains two space-separated integers s and n. Then n lines follow: the i-th line contains space-separated integers xi and yi â€” the i-th dragon's strength and the bonus for defeating it.
 Sample : 2 2
 1 99
 100 0
@@ -13,3 +13,23 @@ Sample : YES
 
 
 Solution :
+KUMAR AKSHAY
+int main(){
+	long int s,n;
+	cin>>s>>n;
+	long int x[n];
+	long int y[n];]
+	for(int i=0;i<n;i++){
+		cin>>x[i]>>y[i];
+	}
+	for(int i=0;i<n;i++){
+		if(s>x[i]){
+			cout<<"YES"
+			s=s+x[i];
+		}
+		else {
+		cout<<"NO";
+		break;}
+	}
+	return 0;
+}
