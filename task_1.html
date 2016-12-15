@@ -157,7 +157,7 @@
 	$(document).ready(function(){
 		$.ajax({
 			type: "GET",
-			url: "https://raw.githubusercontent.com/GVRGowtham/Python-Class/ne/Tasks/Task 1/Names.txt",
+			url: "https://raw.githubusercontent.com/GVRGowtham/Python-Class/gh-pages/Tasks/Task 1/Names.txt",
 			success: function(data)
 			{
 				var lst=data.split("\n");
@@ -203,7 +203,7 @@
 		document.getElementById("solution").innerHTML="Loading";
 		$.ajax({
 			type: "GET",
-			url: "https://raw.githubusercontent.com/GVRGowtham/Python-Class/ne/Tasks/Task 1/"+name+"/Problem.txt",
+			url: "https://raw.githubusercontent.com/GVRGowtham/Python-Class/gh-pages/Tasks/Task 1/"+name+"/Problem.txt",
 			success: function(data)
 			{
 				document.getElementById("problem").innerHTML=data;
@@ -215,7 +215,7 @@
 		});
 		$.ajax({
 			type: "GET",
-			url: "https://raw.githubusercontent.com/GVRGowtham/Python-Class/ne/Tasks/Task 1/"+name+"/Solution.txt",
+			url: "https://raw.githubusercontent.com/GVRGowtham/Python-Class/gh-pages/Tasks/Task 1/"+name+"/Solution.txt",
 			success: function(data)
 			{
 				document.getElementById("solution").innerHTML=data;
